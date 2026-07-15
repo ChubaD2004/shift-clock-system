@@ -34,9 +34,9 @@ To display hours and tens of minutes in the `HH.M` format (e.g., `15:54` is show
 
 ### Stage 1: The Serial Bridge ⛓️
 *Pushing data through the 74HC595 shift register.*
-- [ ] **Step 1.1:** 74HC595 theory & timing — DS (Data), SHCP (Clock), STCP (Latch)
-- [ ] **Step 1.2:** Segment Lookup Table for Common Anode (inverted logic: `0` = ON)
-- [ ] **Step 1.3:** `shift_out.cpp` driver development (byte transmission function)
+- [x] **Step 1.1:** 74HC595 theory & timing — DS (Data), SHCP (Clock), STCP (Latch)
+- [x] **Step 1.2:** Segment Lookup Table for Common Anode (inverted logic: `0` = ON)
+- [x] **Step 1.3:** `shift_out.cpp` driver development (byte transmission function)
 
 ### Stage 2: 3-Digit Multiplexing 💓
 *Achieving a stable, flicker-free display using Timer ISR.*
