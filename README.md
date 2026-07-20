@@ -40,13 +40,13 @@ To display hours and tens of minutes in the `HH.M` format (e.g., `15:54` is show
 
 ### Stage 2: 3-Digit Multiplexing 💓
 *Achieving a stable, flicker-free display using Timer ISR.*
-- [ ] **Step 2.1:** Hardware wiring of the 12-pin display to the shift register & MCU
-- [ ] **Step 2.2:** Timer1 ISR multiplexing: cyclic anode switching (0 -> 1 -> 2 -> 0)
-- [ ] **Step 2.3:** Test: static output of a preset value (e.g., "12.3")
+- [x] **Step 2.1:** Hardware wiring of the 12-pin display to the shift register & MCU
+- [x] **Step 2.2:** Timer1 ISR multiplexing: cyclic anode switching (0 -> 1 -> 2 -> 0)
+- [x] **Step 2.3:** Test: static output of a preset value (e.g., "12.3")
 
 ### Stage 3: Time Engine 🕒
 *Precise timekeeping and time formatting.*
-- [ ] **Step 3.1:** Formatting math to translate raw seconds (`uint32_t`) into `HH.M` format
+- [x] **Step 3.1:** Formatting math to translate raw seconds (`uint32_t`) into `HH.M` format
 - [ ] **Step 3.2:** Software long-term clock engine inside the Timer ISR
 - [ ] **Step 3.3:** Decimal Point (DP) bit manipulation in the output byte stream
 
