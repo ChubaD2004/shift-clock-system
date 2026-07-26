@@ -11,6 +11,6 @@ void format_time(uint32_t seconds);
 
 
 
-volatile uint8_t display_buffer[3];
+extern volatile uint8_t display_buffer[3];
 
 #endif // DISPLAY_H

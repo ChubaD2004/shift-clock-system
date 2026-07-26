@@ -4,7 +4,7 @@
 #include "display.h"
 #include "shift_out.h"
 
-volatile uint8_t display_buffer[3] = {0xC1, 0xC2, 0xC3}; 
+volatile uint32_t system_seconds = 57240; 
 
 int main(void) {
     // Init Peripherals
@@ -22,6 +22,7 @@ int main(void) {
 
 ISR(TIMER1_COMPA_vect) {
     static uint8_t active_digit = 0;
+    static uint16_t tick_counter = 0;
     
     // Set PD2, PD3, PD4 to LOW
     PORTD &= ~((1 << PD2) | (1 << PD3) | (1 << PD4)); 
@@ -39,5 +40,21 @@ ISR(TIMER1_COMPA_vect) {
         PORTD |= (1 << PD4);
         active_digit = 0;
     }
+
+    tick_counter++;
+
+    if (tick_counter >= 400)
+    {
+        tick_counter = 0;
+        system_seconds++;
+
+        if (system_seconds >= 86400) {
+            system_seconds = 0;
+        }
+                    
+        format_time(system_seconds);       
+    }
+    
+
 }
 

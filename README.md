@@ -47,8 +47,10 @@ To display hours and tens of minutes in the `HH.M` format (e.g., `15:54` is show
 ### Stage 3: Time Engine 🕒
 *Precise timekeeping and time formatting.*
 - [x] **Step 3.1:** Formatting math to translate raw seconds (`uint32_t`) into `HH.M` format
-- [ ] **Step 3.2:** Software long-term clock engine inside the Timer ISR
-- [ ] **Step 3.3:** Decimal Point (DP) bit manipulation in the output byte stream
+- [x] **Step 3.2:** Software long-term clock engine inside the Timer ISR
+- [x] **Step 3.3:** Decimal Point (DP) bit manipulation in the output byte stream
+- [ ] **Step 3.4:** Bare-metal I2C (TWI) driver development (START, STOP, Write, Read)  <-- IN PROGRESS
+- [ ] **Step 3.5:** DS1307/DS3231 RTC module integration & time reading
 
 ### Stage 4: Finalization 🚀
 - [ ] **Step 4.1:** Complete system schematic in KiCad

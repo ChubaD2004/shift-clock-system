@@ -1,7 +1,7 @@
 #include "shift_out.h"
 #include <avr/io.h>
 
-void shift_init(void) {
+void shift_init() {
     // Set PB0, PB1, PB2 as outputs
     DDRB |= (1 << PB0) | (1 << PB1) | (1 << PB2); 
 

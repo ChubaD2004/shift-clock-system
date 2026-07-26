@@ -1,12 +1,13 @@
 #include "display.h"
 #include <avr/io.h>
 
+volatile uint8_t display_buffer[3] = {0xC0, 0xC0, 0xC0}; 
 static const uint8_t segment_lut[10] = {
     0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90
 };
 
 
-void display_init(void) {
+void display_init() {
     // Set PD2, PD3, PD4 as outputs
     DDRD |= (1 << PD2) | (1 << PD3) | (1 << PD4); 
 
@@ -14,7 +15,7 @@ void display_init(void) {
     PORTD &= ~((1 << PD2) | (1 << PD3) | (1 << PD4)); 
 }
 
-void timer1_init(void) {
+void timer1_init() {
     // 1. Reset Control Register A to default (not strictly needed, but good practice)
     TCCR1A = 0; 
 
